@@ -97,11 +97,10 @@ public class ArrayMadness {
         }
         /*Cоздаем список(ArrayList) строк, считываем 5 строк с клавиатуры и добавляем их в список, затем находим самую короткую строку и выводим её на экран.
         Если таких строк несколько — выводим их все, каждую с новой строки.*/
-
         System.out.println("Task #5: ArrayList");
         ArrayList<String> firstArrayList = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter the strings(enter the empty string, if you wont to end entering): " + "\n");
+        System.out.print("Enter the strings(enter the empty string, if you want to end entering): " + "\n");
         while (true) {
             String current = scan.nextLine();
             if (current.equals("")) break;
@@ -121,9 +120,21 @@ public class ArrayMadness {
         }
         /*Пользователь вводит(через консоль) набор чисел в виде одной строки например (“1, 2, 3, 4, 4, 5”).
         Избавиться от повторяющихся элементов в строке и вывести результат на экран. Сделать проверку - если пользователь ввел 3 или меньше чисел, предложить ввести числа еще раз пока не будет больше 3х чисел*/
-
-
-
+        System.out.println("Task #6: delete duplicates");
+        System.out.println("Enter more than three numbers with a space(enter the Enter key, if you want to end entering): ");
+        int numberCount;
+        Set<String> set = new HashSet<String>();
+        boolean flag = false;
+        while (!flag) {
+            String scan2 = new Scanner(System.in).nextLine();
+            set.addAll(Arrays.asList(scan2.split(" ")));
+            numberCount = Arrays.asList(scan2.split(" ")).size();
+            if (numberCount > 3) {
+                flag = true;
+            }
+            System.out.println("Enter more than three numbers");
+        }
+        System.out.println(set);
     }
 }
 
